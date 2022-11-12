@@ -24,6 +24,8 @@ function App() {
         >
           Posts
         </router.Link>
+        <hr />
+        <Outlet/>
       </RouterProvider>
       </div>
   );

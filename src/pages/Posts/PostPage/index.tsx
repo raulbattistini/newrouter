@@ -1,3 +1,4 @@
+import { Outlet } from "@tanstack/react-router";
 import { router } from "../../../routes";
 import * as C from "./styles";
 

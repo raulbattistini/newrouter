@@ -6,6 +6,7 @@ import { Posts } from "./pages/Posts";
 import { PostPage } from "./pages/Posts/PostPage";
 import { LostConnectionError } from "./utils/errors/LostConnectionError";
 import { fetchPostById, fetchPosts } from "./utils/services/fetch";
+import { PostsIndexing } from "./pages/Posts/PostsIndexing";
 
 const routeConfig = createRouteConfig().createChildren((createRoute) => [
   createRoute({
@@ -26,7 +27,11 @@ const routeConfig = createRouteConfig().createChildren((createRoute) => [
     },
   }).createChildren((createRoute) => [
     createRoute({
-      path: "/:postId",
+      path: "/",
+      element: <PostsIndexing/>
+    }),
+    createRoute({
+      path: ":postId",
       element: <PostPage />,
       errorElement: <LostConnectionError />,
       loader: async ({ params: { postId } }) => {

@@ -28,14 +28,13 @@ export const Posts = () => {
                   }}
                   activeProps={{ className: "font-bold" }}
                 >
-                  <p> {post.body}</p>
                   <pre>{post.title.substring(0, 20)}</pre>
                 </Link>
               </div>
             );
           })}
         </div>
-        <hr />
+        <Outlet/>
       </div>
     </C.Container>
   );
